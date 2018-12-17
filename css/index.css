@@ -1,0 +1,43 @@
+.demo1{
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    padding-top: 38px;
+    background-color: #eee;
+    margin: 0 auto;
+}
+.border_line{
+    position: relative;
+    box-sizing: border-box;
+}
+.border_line:before,.border_line:after{
+    content: '';
+    box-sizing: border-box;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: 1px solid transparent;
+}
+.border_line:before{
+    left: 0;
+    top: 0;
+    transition: height .2s ease-in .4s,width .2s ease-in .6s ,border-color 0s .8s;
+}
+.border_line:after{
+    right: 0;
+    bottom: 0;
+    transition: width .2s ease-in .2s, height .2s ease-in,border-color 0s .4s;
+}
+.border_line:hover:before,
+.border_line:hover:after{
+    width: 100%;
+    height: 100%;
+}
+.border_line:hover:before{
+    border-color: red red transparent transparent;
+    transition: width .2s ease-out,height .2s ease-out .2s;
+}
+.border_line:hover:after{
+    border-color:transparent transparent red red;
+    transition: width .2s ease-out .4s,height .2s ease-out .6s,border-color 0s .4s;
+}
